@@ -20,10 +20,6 @@ export class Server {
   public async start(): Promise<void> {
     const port = Number(process.env.APP_PORT);
 
-    if (!port) {
-      throw new Error('port is not defined as envirioment');
-    }
-
     this.app.use(express.json());
     this.app.use('/api', route);
     this.app.use(
@@ -46,9 +42,9 @@ export class Server {
     );
 
     await database.connect(String(process.env.MONGO_URL));
-    this.app.listen(Number(process.env.APP_PORT), () => {
+    this.app.listen(port ?? 3333, () => {
       logger.info('Server is running');
-      logger.info(`Server port: ${port}`);
+      logger.info(`Server port: ${port ?? 3333}`);
     });
   }
 }
