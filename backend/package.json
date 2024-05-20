@@ -12,10 +12,14 @@
     "prettier:fix": "npm run prettier -- --write"
   },
   "dependencies": {
+    "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-error-handler": "^1.1.0",
     "mongoose": "^8.3.5",
-    "winston": "^3.13.0"
+    "winston": "^3.13.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",
