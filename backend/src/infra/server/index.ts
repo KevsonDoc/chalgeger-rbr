@@ -42,9 +42,9 @@ export class Server {
     );
 
     await database.connect(String(process.env.MONGO_URL));
-    this.app.listen(port ?? 3333, () => {
+    this.app.listen(port || 3333, () => {
       logger.info('Server is running');
-      logger.info(`Server port: ${port ?? 3333}`);
+      logger.info(`Server port: ${port || 3333}`);
     });
   }
 }
